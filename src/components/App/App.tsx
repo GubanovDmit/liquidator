@@ -1,8 +1,8 @@
 import React from 'react';
 import { Route, Switch } from 'react-router-dom';
-import { Main, CreateExchanger } from './pages';
-import './font.css';
-import './app.css';
+import { Main, CreateExchanger } from '../../pages';
+import '../../font.css';
+import './app.scss';
 
 const App: React.FC = () => {
     return (

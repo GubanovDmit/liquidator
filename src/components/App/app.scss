@@ -1,8 +1,7 @@
-.app-container {
-    background-image: radial-gradient(circle at 50% 0, #8395ad, #4c5c74);
-}
-
 .app {
+    &-container {
+        background-image: radial-gradient(circle at 50% 0, #8395ad, #4c5c74);
+    }
     width: 1105px;
     margin: 0 auto;
     min-height: 100vh;
