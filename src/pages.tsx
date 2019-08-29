@@ -12,6 +12,7 @@ export const Main = () =>
 export const CreateExchanger = () =>
     (
         <div>
+            <Header />
             Create Exchanger
         </div>
     );

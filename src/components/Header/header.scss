@@ -1,2 +1,40 @@
 .header {
+    width: 100%;
+    min-height: 60px;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    color: #fff;
+    font-size: 14px;
+    padding-top: 22px;
+
+    a {
+        color: inherit;
+    }
+
+    & .button:not(:last-child) {
+        margin-right: 20px;
+    }
+}
+
+.header-logo {
+    &__name {
+        font-size: 22px;
+        letter-spacing: 5.8px;
+    }
+    &__description {
+        font-size: 12px;
+        margin-top: 2px;
+    }
+}
+
+.header-menu {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    flex-grow: 1;
+    margin-left: 82px;
+    margin-right: 82px;
+    color: #d0d8e5;
 }
