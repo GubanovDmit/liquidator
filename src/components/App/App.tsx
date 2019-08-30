@@ -3,10 +3,10 @@ import { Route, Switch } from 'react-router-dom';
 import { CreateExchanger, Main, MyExchangers } from '../pages';
 import '../../font.css';
 import './app.scss';
-import { Header } from "../ui/Header/Header";
-
+import { Header } from '../ui/Header/Header';
 
 export const App: React.FC = memo(() => {
+
     const [isLoggedIn, setLoggedIn] = useState(false);
 
     return (
@@ -19,7 +19,7 @@ export const App: React.FC = memo(() => {
                     {isLoggedIn && (
                         <>
                             <Route exact path='/create' component={CreateExchanger} />
-                            <Route exact path='/myexchangers' component={MyExchangers} />
+                            <Route exact path='/my-exchangers' component={MyExchangers} />
                         </>
                     )}
                 </Switch>

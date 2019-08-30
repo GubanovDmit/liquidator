@@ -1,5 +1,6 @@
 import React from 'react';
 import { NavLink } from 'react-router-dom';
+import { KeeperAdapter } from "../../../KeeperAdapter";
 import './header.scss';
 import './button.scss';
 
@@ -29,17 +30,20 @@ interface IHeaderProps {
 }
 
 export const Header: React.FC<IHeaderProps> = ({ isLoggedIn, onLoginChange }) => {
-    async function onClickLogIn() {
-        await new Promise(resolve => setTimeout(resolve, 500));
 
-        onLoginChange(true);
+    async function onLogIn() {
+        const isLogged = await KeeperAdapter.getLoggedState();
+
+        onLoginChange(isLogged);
     }
 
-    async function onClickLogOut() {
-        await new Promise(resolve => setTimeout(resolve, 500));
-
+    async function onLogOut() {
         onLoginChange(false);
     }
+
+    WavesKeeper.on('update', () => {
+        onLogIn();
+    });
 
     return (
         <div className="header">
@@ -69,16 +73,16 @@ export const Header: React.FC<IHeaderProps> = ({ isLoggedIn, onLoginChange }) =>
 
                 {isLoggedIn ? (
                     <div className="button-container">
-                        <NavLink to="/myexchangers">
+                        <NavLink to="/my-exchangers">
                             <button className="button button__transparent">
                                 My Exchangers
                             </button>
                         </NavLink>
-                        <button className="button button__transparent" onClick={onClickLogOut}>X</button>
+                        <button className="button button__transparent" onClick={onLogOut}>X</button>
                     </div>
                 ) : (
                     <div className="button-container">
-                        <button className="button button__transparent" onClick={onClickLogIn}>
+                        <button className="button button__transparent" onClick={onLogIn}>
                             Log in Waves Keeper
                         </button>
                     </div>
