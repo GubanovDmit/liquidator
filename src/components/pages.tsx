@@ -1,10 +1,8 @@
 import React from 'react';
-import { Header } from './components/Header/header';
 
 export const Main = () =>
     (
         <div>
-            <Header />
             Main
         </div>
     );
@@ -12,7 +10,13 @@ export const Main = () =>
 export const CreateExchanger = () =>
     (
         <div>
-            <Header />
             Create Exchanger
+        </div>
+    );
+
+export const MyExchangers = () =>
+    (
+        <div>
+            My Exchangers
         </div>
     );

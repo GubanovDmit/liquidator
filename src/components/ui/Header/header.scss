@@ -13,7 +13,11 @@
         color: inherit;
     }
 
-    & .button:not(:last-child) {
+    & .button-container {
+        display: inline-block;
+    }
+
+    & .button-container:not(:last-child) {
         margin-right: 20px;
     }
 }
